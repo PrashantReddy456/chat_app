@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+
+# Production/Build
+dist/
+.next/
+out/
+build/
+*.tsbuildinfo
+next-env.d.ts
+
+# Environment Variables (sensitive info)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs and system files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+.DS_Store
+Thumbs.db

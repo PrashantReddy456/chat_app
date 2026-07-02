@@ -25,19 +25,19 @@ graph TD
 ```
 
 ### Decoupled Services
-1. **[User Service](file:///c:/Users/prash/OneDrive/Documents/projects/chatapp/backend/user)** (Port `5000`):
+1. **[User Service](./backend/user)** (Port `5000`):
    - Manages user profiles, authentication, and user lookups.
    - Employs **Redis** for authentication session caching.
    - Generates passwordless login OTPs and publishes email jobs to **RabbitMQ** under the `send-otp` queue.
-2. **[Mail Service](file:///c:/Users/prash/OneDrive/Documents/projects/chatapp/backend/mail)** (Port `5001`):
+2. **[Mail Service](./backend/mail)** (Port `5001`):
    - An asynchronous queue worker service.
    - Consumes messages from RabbitMQ and dispatches email notifications (OTPs) to users using **Nodemailer** through SMTP.
-3. **[Chat Service](file:///c:/Users/prash/OneDrive/Documents/projects/chatapp/backend/chat)** (Port `5002`):
+3. **[Chat Service](./backend/chat)** (Port `5002`):
    - Responsible for room management, persisting messages, and real-time Socket.io connections.
    - Leverages **Multer** and **Cloudinary** to support photo/media message attachments.
    - Directly triggers live WebSocket events for typing, messaging, and read receipts.
-4. **[Frontend Client](file:///c:/Users/prash/OneDrive/Documents/projects/chatapp/frontend)** (Port `3000`):
-   - Built on **Next.js 16** (React 19) and styled using **Tailwind CSS v4**.
+4. **[Frontend Client](./frontend)** (Port `3000`):
+   - Built on **Next.js ** (React ) and styled using **Tailwind CSS v4**.
    - Integrates state and socket context modules to handle authentication states and real-time socket events natively.
 
 ---
@@ -58,7 +58,7 @@ graph TD
 
 | Layer | Technologies |
 | :--- | :--- |
-| **Frontend** | Next.js 16 (App Router), React 19, Tailwind CSS v4, Socket.io Client, Axios, React Hot Toast, Lucide Icons |
+| **Frontend** | Next.js  (App Router), React , Tailwind CSS v4, Socket.io Client, Axios, React Hot Toast, Lucide Icons |
 | **Backend Framework** | Node.js, Express 5, TypeScript, Nodemon, Concurrently |
 | **Databases & Cache** | MongoDB (Mongoose), Redis (Upstash/Self-hosted) |
 | **Messaging & Queues** | RabbitMQ (amqplib) |
